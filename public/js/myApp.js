@@ -15,7 +15,7 @@ myApp
       .when('/', {
         templateUrl : 'views/default.html'
       })
-      .when('/todos', {
+      .when('/todo', {
         templateUrl: 'views/todo.html',
         controller : 'todoController'
       })
