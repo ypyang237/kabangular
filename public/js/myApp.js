@@ -15,6 +15,10 @@ myApp
       .when('/', {
         templateUrl : 'views/default.html'
       })
+      .when('/todos', {
+        templateUrl: 'views/todo.html',
+        controller : 'todoController'
+      })
       .otherwise({
         templateUrl : 'views/error404.html',
         controller  : 'ErrorController' });  }])
