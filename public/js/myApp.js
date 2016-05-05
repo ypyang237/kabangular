@@ -6,7 +6,11 @@
 var myApp = angular.module('myApp');
 
 myApp
-  .config(['$locationProvider', '$routeProvider',function($locationProvider, $routeProvider) {
+  .config([
+    'TodosProvider',
+    '$locationProvider',
+    '$routeProvider',
+    function(TodosProvider, $locationProvider, $routeProvider) {
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false}
@@ -15,13 +19,14 @@ myApp
       .when('/', {
         templateUrl : 'views/default.html'
       })
-      .when('/todo', {
-        templateUrl: 'views/todo.html',
-        controller : 'todoController'
+      .when('/todos', {
+        templateUrl: 'views/todos.html',
+        controller : 'TodosController'
       })
       .otherwise({
         templateUrl : 'views/error404.html',
         controller  : 'ErrorController' });  }])
+
   .run(['$rootScope', function($rootScope){
     // run information
   }]);

@@ -3,7 +3,7 @@
 (function() {
 
  angular.module('myApp')
-  .controller('TodoController', ['scope', 'Todos', function($scope, Todos) {
+  .controller('TodosController', ['scope', 'Todos', function($scope, Todos) {
 
      $scope.todos = [];
       Todos.getTodos().then(function(response) {
