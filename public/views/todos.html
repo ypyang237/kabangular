@@ -1,0 +1,17 @@
+    <div>
+      <h2>To - dos </h2>
+      <ul ng-repeat="todo in todos | orderBy: 'title'">
+        <li>
+          Title: {{ todo.title }}
+        </li>
+        <li>
+          Author: {{ todo.author }}
+        </li>
+        <li>
+          dueDate: {{ todo.dueDate }}
+        </li>
+        <li>
+          story: {{ todo.story }}
+        </li>
+      </ul>
+    </div>
