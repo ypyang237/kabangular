@@ -5,11 +5,12 @@
 
 function todoService() {
 
+
   this.getTodo = function() {
     return this.todo;
   };
 
-  this.getTodo = function(id) {
+  this.getTodoById = function(id) {
 
     return this.todo.filter(function(todo) {
       return id === todo.id;
@@ -39,10 +40,10 @@ function todoService() {
 
   };
 
-angular.module('myApp')
-  .service('todoService', todoService);
 
 
 }
+angular.module('myApp')
+  .service('todoService', todoService);
 
 }());

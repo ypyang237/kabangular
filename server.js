@@ -8,15 +8,16 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const Todo = require('./models/todos');
 
-mongoose.connect('mongodb://localhost/kanbangular');
+mongoose.connect('mongodb://localhost/todos');
 
 app.use(express.static('./public'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
 app.use(methodOverride());
-app.use('/api/todos', todos);
+// app.use('/api/todos', todos);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
@@ -24,26 +25,14 @@ db.once('open', function() {
   console.log('connected to mongoose');
 });
 
-app.get('*', function(req, res){
-  res.sendFile('./public/index.html',
-    {
-      root  : __dirname
-    });
-});
 
-// var todoSchema = mongoose.Schema({
-//   id: Number,
-//   title: String,
-//   author: String,
-//   due: Date,
-//   state: String
 
-// });
 
-// var task = mongoose.model('Task', todoSchema);
 
 app.get('/api/todos', (req, res) => {
   Todo.find((e, todos) => {
+
+    console.log(e, todos);
     if (e) {
       res.send(e);
     }
@@ -89,6 +78,12 @@ app.delete('/apa/todos/:todo_id', (req, res) => {
 });
 
 
+app.get('*', function(req, res){
+  res.sendFile('./public/index.html',
+    {
+      root  : __dirname
+    });
+});
 
 
 

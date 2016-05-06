@@ -2,8 +2,8 @@
   <div id='massContainer'>
     <div>
       <h2>To - dos </h2>
-      <ul ng-repeat="todo in todos | filter: state = 'ok'">
-    <div class="todoContainer">
+    <div ng-repeat="todo in todos | filter: state = 'ok' "class="todoContainer">
+      <ul >
         <li>
           Title: {{ todo.title }}
         </li>
@@ -19,8 +19,8 @@
         <li>
           state: {{ todo.state }}
         </li>
-    </div>
       </ul>
+    </div>
   </div>
    <div>
       <h2> Doing </h2>
