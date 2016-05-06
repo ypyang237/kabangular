@@ -11,6 +11,8 @@ myApp
     '$locationProvider',
     '$routeProvider',
     function(TodosProvider, $locationProvider, $routeProvider) {
+
+
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false}
