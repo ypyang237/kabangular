@@ -1,6 +1,9 @@
+    <div><h1>To-Do List</h1></div>
+  <div id='massContainer'>
     <div>
       <h2>To - dos </h2>
-      <ul ng-repeat="todo in todos">
+      <ul ng-repeat="todo in todos | filter: state = 'ok'">
+    <div class="todoContainer">
         <li>
           Title: {{ todo.title }}
         </li>
@@ -13,5 +16,54 @@
         <li>
           story: {{ todo.story }}
         </li>
-      </ul>
+        <li>
+          state: {{ todo.state }}
+        </li>
     </div>
+      </ul>
+  </div>
+   <div>
+      <h2> Doing </h2>
+      <ul ng-repeat="todo in todos">
+    <div class="doingContainer">
+        <li>
+          Title: {{ todo.title }}
+        </li>
+        <li>
+          Author: {{ todo.author }}
+        </li>
+        <li>
+          dueDate: {{ todo.dueDate }}
+        </li>
+        <li>
+          story: {{ todo.story }}
+        </li>
+        <li>
+          state: {{ todo.state }}
+        </li>
+    </div>
+      </ul>
+  </div>
+ <div>
+      <h2>Done </h2>
+      <ul ng-repeat="todo in todos">
+    <div class="doneContainer">
+        <li>
+          Title: {{ todo.title }}
+        </li>
+        <li>
+          Author: {{ todo.author }}
+        </li>
+        <li>
+          dueDate: {{ todo.dueDate }}
+        </li>
+        <li>
+          story: {{ todo.story }}
+        </li>
+        <li>
+          state: {{ todo.state }}
+        </li>
+    </div>
+      </ul>
+  </div>
+</div>
