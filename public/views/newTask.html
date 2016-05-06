@@ -1,28 +1,23 @@
 <div>
   <h2>Add New Task</h2>
-  <fieldset>
-    <div>
+
+    <form action="/" method="POST">
+
       <label for="Title">Title</label>
       <input type="text" id="Title" ng-model="newTask.title">
-    </div>
-    <div>
+
+
       <label for="Author">Author</label>
       <input type="text" id="Author" ng-model="newTask.author">
-    </div>
-    <div>
+
+
       <label for="Due">Due</label>
       <input type="text" id="Due" ng-model="newTask.due">
-    </div>
-    <div>
+
       <label for="State">State</label>
       <input type="text" id="State" ng-model="newTask.state">
-    </div>
-      <div>
+
       <button type="button" id="newTaskBtn">Add Task</button>
-      </div>
-  </fieldset>
-
-
-
+    </form>
 
 </div>
