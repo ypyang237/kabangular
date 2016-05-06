@@ -11,12 +11,13 @@ myApp
     '$locationProvider',
     '$routeProvider',
     function(TodosProvider, $locationProvider, $routeProvider) {
-
+      TodosProvider.setEndpoint('/api/todos');
 
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false}
       );
+
     $routeProvider
       .when('/', {
         templateUrl : 'views/default.html'
@@ -24,10 +25,9 @@ myApp
       .when('/todos', {
         templateUrl: 'views/todos.html',
         controller : 'TodosController'
-      })
-      .otherwise({
-        templateUrl : 'views/error404.html',
-        controller  : 'ErrorController' });  }])
+      });
+
+   }])
 
   .run(['$rootScope', function($rootScope){
     // run information
