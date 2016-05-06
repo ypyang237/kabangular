@@ -28,6 +28,7 @@ myApp
       })
       .when('/new', {
         templateUrl: 'views/newTask.html',
+        controller: 'TaskController'
       });
 
    }])
