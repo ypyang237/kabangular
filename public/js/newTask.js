@@ -2,6 +2,7 @@
 
 var newTaskBtn = document.getElementById('newTaskBtn');
 newTaskBtn.addEventListener('click', function(event) {
+  console.log('click');
  TaskService();
 });
 
@@ -41,6 +42,15 @@ function TaskService() {
   });
 
   };
+
+var newTaskReq = new XMLHttpRequest();
+newTaskReq.addEventListener('load', function(data) {
+  console.log('data');
+});
+
+newTaskReq.open('POST', '/');
+newTaskReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+newTaskReq.send(Object);
 
 angular.module('myApp')
   .service('TaskService', TaskService);
