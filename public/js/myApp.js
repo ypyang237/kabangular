@@ -25,6 +25,9 @@ myApp
       .when('/todos', {
         templateUrl: 'views/todos.html',
         controller : 'TodosController'
+      })
+      .when('/new', {
+        templateUrl: 'views/newTask.html',
       });
 
    }])
